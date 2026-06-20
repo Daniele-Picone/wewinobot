@@ -20,13 +20,16 @@ const SITO = {
     home: 'https://www.wineworldweb.it',
     vini: 'https://www.wineworldweb.it/wine',
     mondovino: 'https://www.wineworldweb.it/wineworld',
+    blog: 'https://www.wineworldweb.it/blog',
     docg: 'https://www.wineworldweb.it/docg'
 };
 
 const SOCIAL = {
     instagram: 'https://www.instagram.com/wineworldweb.it/',
     facebook: 'https://www.facebook.com/profile.php?id=61583979324726',
-    
+    linkedin: 'https://www.linkedin.com/in/daniele-picone-9218122b2/',
+    pinterest: 'https://www.pinterest.com/wineworldwebit/',
+    x: 'https://x.com/wineworldweb'
 };
 
 // ============ DATI WEWINO ============
@@ -349,7 +352,16 @@ async function sendMessage(chatId, text, parseMode = 'HTML') {
     }
 }
 
+function validaBottoni(buttons) {
+    // Ogni bottone inline DEVE avere "url" oppure "callback_data" (Telegram rifiuta i bottoni con solo "text")
+    return buttons.map(riga =>
+        riga.filter(b => b && (b.url || b.callback_data))
+    ).filter(riga => riga.length > 0);
+}
+
 async function sendMessageWithButtons(chatId, text, buttons) {
+    const bottoniValidi = validaBottoni(buttons);
+
     try {
         await axios.post(`${TELEGRAM_API}/sendMessage`, {
             chat_id: chatId,
@@ -357,11 +369,21 @@ async function sendMessageWithButtons(chatId, text, buttons) {
             parse_mode: 'HTML',
             disable_web_page_preview: true,
             reply_markup: {
-                inline_keyboard: buttons
+                inline_keyboard: bottoniValidi
             }
         });
     } catch (error) {
-        console.error('Errore invio messaggio con bottoni:', error?.response?.data || error.message);
+        // Logga il motivo esatto del rifiuto di Telegram (es. BUTTON_URL_INVALID, testo troppo lungo, ecc.)
+        const dettaglioErrore = error?.response?.data?.description || error.message;
+        console.error('Errore invio messaggio con bottoni:', dettaglioErrore);
+        console.error('Bottoni che hanno causato il problema:', JSON.stringify(buttons));
+
+        // Fallback: se i bottoni falliscono, mandiamo comunque il testo così l'utente non rimane senza risposta
+        try {
+            await sendMessage(chatId, text);
+        } catch (fallbackError) {
+            console.error('Errore anche nel fallback senza bottoni:', fallbackError?.response?.data || fallbackError.message);
+        }
     }
 }
 
@@ -483,7 +505,8 @@ Buon divertimento! 🍷
     else if (command === '/social') {
         const buttons = [
             [{ text: "📸 Instagram", url: SOCIAL.instagram }, { text: "👍 Facebook", url: SOCIAL.facebook }],
-            
+            [{ text: "💼 LinkedIn", url: SOCIAL.linkedin }, { text: "📌 Pinterest", url: SOCIAL.pinterest }],
+            [{ text: "✖️ X (Twitter)", url: SOCIAL.x }]
         ];
         await sendMessageWithButtons(chatId, '📱 <b>Seguici sui social!</b>\n\nResta aggiornato su WineWorld:', buttons);
     }
