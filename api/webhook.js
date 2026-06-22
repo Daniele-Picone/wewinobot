@@ -24,188 +24,753 @@ const SOCIAL = {
     x: 'https://x.com/wineworldweb'
 };
 
-// ============ DATABASE VINI ============
+// ============ DATABASE VINI — 77 DOCG ITALIANE ============
 
 const VINI = [
+    // ===== PIEMONTE =====
     {
         nome: "Barolo", tipo: "Rosso", regione: "Piemonte", gradazione: "13-15%",
         temperatura: "18°C", bicchiere: "Borgogna",
-        descrizione: "Un vino nobile e complesso, perfetto per cene importanti",
-        abbinamento: "Carni rosse, formaggi stagionati, tartufo",
-        cibi: ["carne", "manzo", "bistecca", "brasato", "tartufo", "formaggio stagionato", "selvaggina"],
-        curiosita: "Viene chiamato il 'Re dei vini, vino dei Re' per il legame storico con i Savoia",
+        descrizione: "Il Re dei vini italiani: potente, complesso, longevo. Nasce dal Nebbiolo nelle Langhe.",
+        abbinamento: "Brasato al Barolo, tartufo, selvaggina, formaggi stagionati",
+        cibi: ["carne", "manzo", "bistecca", "brasato", "tartufo", "formaggio stagionato", "selvaggina", "cinghiale"],
+        curiosita: "Viene chiamato il 'Re dei vini, vino dei Re' per il legame storico con i Savoia. Invecchiamento minimo 3 anni.",
         battuta: "Il Barolo è come me: elegante, sofisticato e un po' altezzoso! 🍷",
         emoji: "👑"
     },
     {
-        nome: "Prosecco", tipo: "Bianco Frizzante", regione: "Veneto", gradazione: "11%",
-        temperatura: "6-8°C", bicchiere: "Flute",
-        descrizione: "Fresco, vivace e sempre pronto a festeggiare",
-        abbinamento: "Aperitivi, frutti di mare, dolci, affettati",
-        cibi: ["aperitivo", "gamberi", "frutti di mare", "antipasto", "dolce", "torta", "speck", "prosciutto"],
-        curiosita: "Le colline di Conegliano e Valdobbiadene, sua patria, sono Patrimonio UNESCO",
-        battuta: "Il Prosecco è il mio migliore amico - sempre allegro e festaiolo! 🎉",
-        emoji: "🥂"
-    },
-    {
-        nome: "Chianti", tipo: "Rosso", regione: "Toscana", gradazione: "12-13%",
-        temperatura: "16-18°C", bicchiere: "Bordeaux",
-        descrizione: "Versatile e amichevole, il compagno perfetto di ogni pasto",
-        abbinamento: "Pasta, pizza, carni, bistecca fiorentina",
-        cibi: ["pasta", "pizza", "bistecca", "pollo", "maiale", "ragù", "lasagne", "carne"],
-        curiosita: "Il simbolo del Chianti Classico è il Gallo Nero, presente già nel XIII secolo",
-        battuta: "Il Chianti? È come me: accessibile a tutti ma con una profondità sorprendente! 😉",
-        emoji: "🐓"
-    },
-    {
-        nome: "Amarone", tipo: "Rosso", regione: "Veneto", gradazione: "15-17%",
-        temperatura: "18-20°C", bicchiere: "Borgogna grande",
-        descrizione: "Intenso e passionale, per chi ama le emozioni forti",
-        abbinamento: "Carni in umido, formaggi blu, cioccolato fondente",
-        cibi: ["stufato", "brasato", "ossobuco", "gorgonzola", "cioccolato", "selvaggina", "cinghiale"],
-        curiosita: "Nasce dall'appassimento delle uve per mesi su graticci, che ne concentra zuccheri e aromi",
-        battuta: "L'Amarone è il vino più drammatico che conosco - sempre con storie da raccontare! 🎭",
+        nome: "Barbaresco", tipo: "Rosso", regione: "Piemonte", gradazione: "12.5-14%",
+        temperatura: "17-18°C", bicchiere: "Borgogna",
+        descrizione: "Il Barolo più elegante e femminile: nasce sempre dal Nebbiolo ma a Barbaresco, Alba e Treiso.",
+        abbinamento: "Arrosti, tartufo bianco, selvaggina, formaggi a pasta dura",
+        cibi: ["arrosto", "tartufo", "selvaggina", "cervo", "fagiano", "pecorino"],
+        curiosita: "Gaja lo ha reso famoso in tutto il mondo negli anni '70. Invecchiamento minimo 2 anni.",
+        battuta: "Il Barbaresco è la sorella elegante del Barolo — stessa famiglia, carattere tutto suo! 🌹",
         emoji: "🌹"
     },
     {
-        nome: "Moscato d'Asti", tipo: "Bianco Dolce", regione: "Piemonte", gradazione: "5%",
-        temperatura: "6-8°C", bicchiere: "Flute",
-        descrizione: "Dolce, fresco e leggermente frizzante - la felicità in un bicchiere",
-        abbinamento: "Dolci, frutta, formaggi freschi, pasticceria",
-        cibi: ["torta", "dolce", "frutta", "panettone", "croissant", "dessert", "gelato", "tiramisù"],
-        curiosita: "Ha una gradazione alcolica molto bassa, spesso intorno al 5%",
-        battuta: "Il Moscato d'Asti è come una giornata di sole - ti fa sempre sorridere! ☀️",
-        emoji: "🍑"
+        nome: "Barolo Chinato", tipo: "Aromatizzato", regione: "Piemonte", gradazione: "16%",
+        temperatura: "14-16°C", bicchiere: "Calice da liquore",
+        descrizione: "Vino aromatizzato al china, erbe e spezie. Un'icona della tradizione piemontese.",
+        abbinamento: "Cioccolato fondente, formaggi erborinati, fine pasto",
+        cibi: ["cioccolato", "gorgonzola", "dolce", "torrone"],
+        curiosita: "Inventato da Carpano nel 1786, è considerato il digestivo piemontese per eccellenza.",
+        battuta: "Il Barolo Chinato: quando il vino decide di diventare un'esperienza gastronomica! 🌿",
+        emoji: "🌿"
     },
     {
-        nome: "Nero d'Avola", tipo: "Rosso", regione: "Sicilia", gradazione: "13-14%",
-        temperatura: "16-18°C", bicchiere: "Bordeaux",
-        descrizione: "Caldo, avvolgente e pieno di sole siciliano",
-        abbinamento: "Arrosticini, pasta alla norma, pesce spada, melanzane",
-        cibi: ["melanzane", "pesce spada", "tonno", "pasta", "arancini", "salsiccia", "agnello"],
-        curiosita: "Prende il nome da Avola, cittadina in provincia di Siracusa",
-        battuta: "Il Nero d'Avola è il vino più caloroso che conosca - ti abbraccia come un amico! 🤗",
+        nome: "Moscato d'Asti", tipo: "Bianco Dolce Frizzante", regione: "Piemonte", gradazione: "5-5.5%",
+        temperatura: "6-8°C", bicchiere: "Flute",
+        descrizione: "Dolce, fresco e leggermente frizzante — la felicità in un bicchiere. Bassa gradazione.",
+        abbinamento: "Dolci, frutta, panettone, croissant, pasticceria",
+        cibi: ["torta", "dolce", "frutta", "panettone", "croissant", "dessert", "gelato", "tiramisù"],
+        curiosita: "Ha una gradazione alcolica bassissima (~5%). Le bollicine nascono in autoclave a bassa pressione.",
+        battuta: "Il Moscato d'Asti è come una giornata di sole — ti fa sempre sorridere! ☀️",
         emoji: "☀️"
     },
     {
-        nome: "Vermentino", tipo: "Bianco", regione: "Sardegna", gradazione: "12-13%",
-        temperatura: "8-10°C", bicchiere: "Tulipano",
-        descrizione: "Fresco come una brezza marina, perfetto per l'estate",
-        abbinamento: "Pesce, frutti di mare, insalate, antipasti leggeri",
-        cibi: ["pesce", "branzino", "orata", "salmone", "insalata", "gamberi", "calamari", "polpo"],
-        curiosita: "Il Vermentino di Gallura è l'unica DOCG bianca della Sardegna",
-        battuta: "Il Vermentino è il mio compagno di vacanza preferito - sempre rinfrescante! 🏖️",
-        emoji: "🌊"
-    },
-    {
-        nome: "Brunello di Montalcino", tipo: "Rosso", regione: "Toscana", gradazione: "13-15%",
-        temperatura: "18-20°C", bicchiere: "Borgogna grande",
-        descrizione: "Potente e longevo, uno dei grandi rossi italiani da invecchiamento",
-        abbinamento: "Selvaggina, brasati, formaggi stagionati, tartufo nero",
-        cibi: ["selvaggina", "cinghiale", "capriolo", "brasato", "tartufo", "pecorino stagionato"],
-        curiosita: "Deve invecchiare per legge almeno 5 anni prima di essere venduto",
-        battuta: "Il Brunello non ha fretta: come i grandi capolavori, ha bisogno di tempo! ⏳",
-        emoji: "⏳"
-    },
-    {
-        nome: "Franciacorta", tipo: "Spumante", regione: "Lombardia", gradazione: "12%",
+        nome: "Asti Spumante", tipo: "Bianco Spumante Dolce", regione: "Piemonte", gradazione: "7-9%",
         temperatura: "6-8°C", bicchiere: "Flute",
-        descrizione: "Le bollicine italiane per eccellenza, eleganti e raffinate",
-        abbinamento: "Aperitivi, pesce, risotti, tutto il pasto",
+        descrizione: "Lo spumante dolce italiano più famoso nel mondo, aromi intensi di pesca e fiori.",
+        abbinamento: "Dolci, frutta fresca, torte nuziali, fine pasto",
+        cibi: ["torta", "frutta", "panna cotta", "dessert", "macaron"],
+        curiosita: "È lo spumante dolce più venduto al mondo. Nasce dallo stesso moscato bianco dell'Asti.",
+        battuta: "L'Asti Spumante porta le bollicine anche a chi non beve! Perfetto per i brindisi! 🎊",
+        emoji: "🎊"
+    },
+    {
+        nome: "Brachetto d'Acqui", tipo: "Rosso Dolce Frizzante", regione: "Piemonte", gradazione: "5.5-6%",
+        temperatura: "8-10°C", bicchiere: "Flute",
+        descrizione: "Rosso leggero e dolce, con inconfondibile aroma di rosa e fragola.",
+        abbinamento: "Fragole, dolci al cioccolato, formaggi freschi, dolci al cucchiaio",
+        cibi: ["fragole", "cioccolato", "panna cotta", "tiramisù", "dolci"],
+        curiosita: "Perfetto abbinamento con il cioccolato fondente: zucchero contro amaro in equilibrio perfetto.",
+        battuta: "Il Brachetto sa di fragola e rosa — è il vino dei romantici! 🌸",
+        emoji: "🌸"
+    },
+    {
+        nome: "Gattinara", tipo: "Rosso", regione: "Piemonte", gradazione: "12.5-13.5%",
+        temperatura: "17-18°C", bicchiere: "Borgogna",
+        descrizione: "Nobile rosso piemontese dal Nebbiolo, con carattere minerale e tannico. Zona del Novarese.",
+        abbinamento: "Carni rosse, selvaggina, formaggi stagionati",
+        cibi: ["brasato", "cinghiale", "cervo", "formaggio stagionato"],
+        curiosita: "È stata la prima DOCG del Piemonte settentrionale. Invecchiamento minimo 3 anni.",
+        battuta: "Il Gattinara è il parente nobile del nord — meno famoso del Barolo ma altrettanto fiero! 🏔️",
+        emoji: "🏔️"
+    },
+    {
+        nome: "Ghemme", tipo: "Rosso", regione: "Piemonte", gradazione: "12-13%",
+        temperatura: "17°C", bicchiere: "Borgogna",
+        descrizione: "Vino del Novarese, prodotto con Nebbiolo locale detto Spanna. Elegante e longevo.",
+        abbinamento: "Selvaggina, formaggi stagionati, carni rosse",
+        cibi: ["selvaggina", "lepre", "coniglio", "formaggio"],
+        curiosita: "Prodotto nella zona di Ghemme e Romagnano Sesia, a fianco del Gattinara.",
+        battuta: "Il Ghemme: quando il Nebbiolo decide di stare tranquillo nel Novarese! 🍇",
+        emoji: "🍇"
+    },
+    {
+        nome: "Dogliani", tipo: "Rosso", regione: "Piemonte", gradazione: "12-13%",
+        temperatura: "16°C", bicchiere: "Bordeaux",
+        descrizione: "Dolcetto di Dogliani al massimo: fruttato, secco, rotondo. Il più pregiato dei Dolcetto.",
+        abbinamento: "Salumi, pasta, carni bianche, formaggi freschi",
+        cibi: ["salumi", "pasta", "pollo", "coniglio", "toma"],
+        curiosita: "Il Dolcetto di Dogliani è stato elevato a DOCG nel 2005. Il nome 'dolcetto' non indica un vino dolce.",
+        battuta: "Il Dogliani si chiama 'dolcetto' ma è secco come un esame di guida! 😄",
+        emoji: "🫐"
+    },
+    {
+        nome: "Erbaluce di Caluso", tipo: "Bianco", regione: "Piemonte", gradazione: "11-12%",
+        temperatura: "10-12°C", bicchiere: "Tulipano",
+        descrizione: "Bianco del Canavese: fresco, minerale, sapido. Esiste anche nella versione passita.",
+        abbinamento: "Pesce, antipasti, risotti, fonduta",
+        cibi: ["pesce", "fonduta", "risotto", "antipasto", "fritto"],
+        curiosita: "L'Erbaluce è uno dei vitigni autoctoni più antichi del Piemonte, citato già nel '600.",
+        battuta: "L'Erbaluce: il bianco piemontese che nessuno conosce ma tutti amano! 🌟",
+        emoji: "🌟"
+    },
+    {
+        nome: "Ovada", tipo: "Rosso", regione: "Piemonte", gradazione: "12-13%",
+        temperatura: "16°C", bicchiere: "Bordeaux",
+        descrizione: "Dolcetto di Ovada: il più tannico e strutturato tra i Dolcetto, con buona longevità.",
+        abbinamento: "Carni, salumi, paste ripiene, formaggi semi-stagionati",
+        cibi: ["carne", "salumi", "pasta ripiena", "formaggio"],
+        curiosita: "Prodotto nell'Ovadese, zona dell'Appennino ligure-piemontese al confine con la Liguria.",
+        battuta: "L'Ovada è il Dolcetto con la testa dura — non invecchia, migliora! 💪",
+        emoji: "🫐"
+    },
+    {
+        nome: "Ruchè di Castagnole Monferrato", tipo: "Rosso", regione: "Piemonte", gradazione: "13%",
+        temperatura: "16°C", bicchiere: "Bordeaux",
+        descrizione: "Rarissimo vino aromatico del Monferrato con profumi di rosa, spezie e frutti rossi.",
+        abbinamento: "Formaggi erborinati, salumi aromatici, piatti speziati",
+        cibi: ["gorgonzola", "salumi", "pasta speziata", "agnello"],
+        curiosita: "Prodotto solo in 7 comuni del Monferrato, è uno dei vini più rari d'Italia.",
+        battuta: "Il Ruchè è il vino più misterioso del Piemonte — pochissimi lo conoscono, nessuno lo dimentica! 🔮",
+        emoji: "🔮"
+    },
+
+    // ===== VALLE D'AOSTA =====
+    {
+        nome: "Blanc de Morgex et de La Salle", tipo: "Bianco", regione: "Valle d'Aosta", gradazione: "11%",
+        temperatura: "8-10°C", bicchiere: "Tulipano",
+        descrizione: "Il vino più in alta quota d'Europa: vigneti fino a 1200 metri sulle Alpi valdostane.",
+        abbinamento: "Fonduta, polenta, pesce di lago, antipasti alpini",
+        cibi: ["fonduta", "polenta", "trota", "antipasto", "fontina"],
+        curiosita: "Il vitigno Priè Blanc cresce a quote elevatissime — sfugge alla fillossera grazie all'altitudine.",
+        battuta: "Il Blanc de Morgex: il vino che si guadagna ogni sorso salendo in quota! 🏔️",
+        emoji: "❄️"
+    },
+
+    // ===== LOMBARDIA =====
+    {
+        nome: "Franciacorta", tipo: "Spumante", regione: "Lombardia", gradazione: "12-12.5%",
+        temperatura: "6-8°C", bicchiere: "Flute",
+        descrizione: "Le bollicine italiane per eccellenza: metodo classico con lunghi affinamenti in bottiglia.",
+        abbinamento: "Aperitivi, pesce, risotti, ostriche, tutto il pasto",
         cibi: ["risotto", "pesce", "antipasto", "aperitivo", "sushi", "ostriche", "capesante"],
-        curiosita: "È prodotto con lo stesso metodo classico dello Champagne, la rifermentazione in bottiglia",
+        curiosita: "È prodotto con lo stesso metodo classico dello Champagne. La prima DOCG italiana per gli spumanti.",
         battuta: "Il Franciacorta fa le bollicine ma prende sul serio se stesso, proprio come un vero gentiluomo! 🥂",
         emoji: "✨"
     },
     {
+        nome: "Sforzato di Valtellina", tipo: "Rosso", regione: "Lombardia", gradazione: "14%",
+        temperatura: "17-18°C", bicchiere: "Borgogna",
+        descrizione: "Potente vino da uve Nebbiolo appassite in Valtellina. Concentrato e avvolgente.",
+        abbinamento: "Selvaggina, brasati, formaggi stagionati di montagna",
+        cibi: ["cinghiale", "cervo", "brasato", "bitto", "casera"],
+        curiosita: "Lo 'Sfursat' nasce dall'appassimento del Nebbiolo valtellinese, come l'Amarone con il Corvina.",
+        battuta: "Lo Sforzato è il Nebbiolo che ha deciso di fare le cose in grande! 🏔️",
+        emoji: "🏔️"
+    },
+    {
+        nome: "Valtellina Superiore", tipo: "Rosso", regione: "Lombardia", gradazione: "12-13%",
+        temperatura: "16-17°C", bicchiere: "Borgogna",
+        descrizione: "Nebbiolo delle Alpi in cinque sottozone: Sassella, Grumello, Inferno, Valgella, Maroggia.",
+        abbinamento: "Pizzoccheri, bresaola, carni brasate, formaggi alpini",
+        cibi: ["pizzoccheri", "bresaola", "brasato", "bitto", "agnello"],
+        curiosita: "I vigneti sono coltivati su terrazzamenti scoscesi a picco sull'Adda — lavoro eroico.",
+        battuta: "Il Valtellina Superiore: il Nebbiolo che ha scalato le Alpi! 🧗",
+        emoji: "⛰️"
+    },
+    {
+        nome: "Oltrepò Pavese Metodo Classico", tipo: "Spumante", regione: "Lombardia", gradazione: "11.5-12.5%",
+        temperatura: "6-8°C", bicchiere: "Flute",
+        descrizione: "Spumante metodo classico dall'Oltrepò Pavese, prodotto prevalentemente con Pinot Nero.",
+        abbinamento: "Aperitivi, risotti, pesce, salumi",
+        cibi: ["aperitivo", "risotto", "pesce", "salumi", "antipasto"],
+        curiosita: "L'Oltrepò Pavese è il maggior produttore italiano di Pinot Nero, spesso destinato alle bollicine.",
+        battuta: "L'Oltrepò Pavese: la terra delle bollicine che nessuno sa collocare sulla mappa! 🗺️",
+        emoji: "🫧"
+    },
+
+    // ===== TRENTINO-ALTO ADIGE =====
+    {
+        nome: "Trento DOC Metodo Classico", tipo: "Spumante", regione: "Trentino", gradazione: "12%",
+        temperatura: "6-8°C", bicchiere: "Flute",
+        descrizione: "Spumante alpino di metodo classico: elegante, sapido, con perlage fine e persistente.",
+        abbinamento: "Aperitivi, pesce di lago, prosciutto di Sauris, antipasti",
+        cibi: ["pesce", "trota", "aperitivo", "prosciutto", "antipasto"],
+        curiosita: "Ferrari Trento è la prima cantina italiana a produrre metodo classico, dal 1902.",
+        battuta: "Il Trento DOC: le bollicine che vengono su dai monti, e si sentono! 🏔️",
+        emoji: "🫧"
+    },
+
+    // ===== VENETO =====
+    {
+        nome: "Amarone della Valpolicella", tipo: "Rosso", regione: "Veneto", gradazione: "15-17%",
+        temperatura: "18-20°C", bicchiere: "Borgogna grande",
+        descrizione: "Intenso e passionale, nasce dall'appassimento delle uve per 90-120 giorni su graticci.",
+        abbinamento: "Carni in umido, selvaggina, formaggi erborinati, cioccolato fondente",
+        cibi: ["stufato", "brasato", "ossobuco", "gorgonzola", "cioccolato", "selvaggina", "cinghiale"],
+        curiosita: "La leggenda dice che nacque per errore: un Recioto dimenticato a fermentare fino in fondo.",
+        battuta: "L'Amarone è il vino più drammatico che conosco — sempre con storie da raccontare! 🎭",
+        emoji: "🌹"
+    },
+    {
+        nome: "Recioto della Valpolicella", tipo: "Rosso Dolce", regione: "Veneto", gradazione: "12-14%",
+        temperatura: "14-16°C", bicchiere: "Borgogna",
+        descrizione: "Il progenitore dell'Amarone: dolce, vellutato, con sentori di ciliegia sotto spirito e cioccolato.",
+        abbinamento: "Cioccolato fondente, dolci alle amarene, formaggi erborinati",
+        cibi: ["cioccolato", "amarene", "gorgonzola", "dolci"],
+        curiosita: "Il Recioto è il papà dell'Amarone: quando la fermentazione si fermava prima, rimaneva dolce.",
+        battuta: "Il Recioto è l'Amarone che si è fermato a metà strada — dolce vita! 🍫",
+        emoji: "🍫"
+    },
+    {
+        nome: "Recioto di Soave", tipo: "Bianco Dolce", regione: "Veneto", gradazione: "12-14%",
+        temperatura: "10-12°C", bicchiere: "Tulipano",
+        descrizione: "Bianco dolce nobile da uve Garganega appassite. Raro e raffinato.",
+        abbinamento: "Dolci delicati, formaggi erborinati, crostate di frutta",
+        cibi: ["crostata", "dolce", "formaggi erborinati", "mandorle"],
+        curiosita: "È prodotto in quantità limitatissime: meno di 200.000 bottiglie l'anno.",
+        battuta: "Il Recioto di Soave: il bianco dolce che non ti aspetti dalla Valpolicella! ✨",
+        emoji: "🍯"
+    },
+    {
+        nome: "Soave Superiore", tipo: "Bianco", regione: "Veneto", gradazione: "12-13%",
+        temperatura: "10-12°C", bicchiere: "Tulipano",
+        descrizione: "La versione superiore del classico Soave: più strutturato, minerale, con buon invecchiamento.",
+        abbinamento: "Risotto all'Amarone, pesce di lago, baccalà alla vicentina",
+        cibi: ["risotto", "pesce", "baccalà", "trota", "carpaccio"],
+        curiosita: "Il Soave Superiore nasce solo dalle colline originali, a differenza del DOC pianeggiante.",
+        battuta: "Il Soave Superiore: quando il classico decide di fare il salto di qualità! 🏰",
+        emoji: "🏰"
+    },
+    {
+        nome: "Bardolino Superiore", tipo: "Rosso", regione: "Veneto", gradazione: "11.5-12.5%",
+        temperatura: "14-16°C", bicchiere: "Bordeaux",
+        descrizione: "Leggero e beverino dal Lago di Garda: Corvina, Rondinella e Molinara in perfetto equilibrio.",
+        abbinamento: "Pesce di lago, pasta, carni bianche, salumi",
+        cibi: ["pesce di lago", "pasta", "pollo", "coniglio", "salumi"],
+        curiosita: "Il Bardolino nasce sulla sponda veronese del Lago di Garda, terra di turismo e vino.",
+        battuta: "Il Bardolino: il vino che si beve guardando il tramonto sul Garda! 🌅",
+        emoji: "🌅"
+    },
+    {
+        nome: "Colli Euganei Fior d'Arancio", tipo: "Bianco Dolce", regione: "Veneto", gradazione: "11-13%",
+        temperatura: "8-10°C", bicchiere: "Tulipano",
+        descrizione: "Dolce e aromatico dai Colli Euganei: profumi intensi di arancio e fiori bianchi.",
+        abbinamento: "Dolci alla frutta, pasticceria secca, formaggi freschi",
+        cibi: ["dolci", "frutta", "formaggi freschi", "biscotti"],
+        curiosita: "Prodotto con Moscato Giallo nei colli vulcanici vicino Padova.",
+        battuta: "Il Fior d'Arancio: un sorso e sei già in un giardino fiorito! 🌺",
+        emoji: "🌺"
+    },
+    {
+        nome: "Conegliano Valdobbiadene Prosecco Superiore", tipo: "Bianco Frizzante", regione: "Veneto", gradazione: "11%",
+        temperatura: "6-8°C", bicchiere: "Flute",
+        descrizione: "Il Prosecco di qualità superiore dalle colline Patrimonio UNESCO tra Conegliano e Valdobbiadene.",
+        abbinamento: "Aperitivi, frutti di mare, dolci, prosciutto crudo",
+        cibi: ["aperitivo", "gamberi", "frutti di mare", "prosciutto", "dolce"],
+        curiosita: "Le colline sono Patrimonio UNESCO dal 2019. Il Cartizze è il cru più pregiato.",
+        battuta: "Il Conegliano Valdobbiadene: le bollicine con il passaporto UNESCO! 🌍",
+        emoji: "🥂"
+    },
+    {
+        nome: "Asolo Prosecco Superiore", tipo: "Bianco Frizzante", regione: "Veneto", gradazione: "11%",
+        temperatura: "6-8°C", bicchiere: "Flute",
+        descrizione: "Prosecco delle colline di Asolo, considerata una delle città più belle d'Italia.",
+        abbinamento: "Aperitivi, risotti delicati, antipasti, frutta",
+        cibi: ["aperitivo", "risotto", "antipasto", "frutta"],
+        curiosita: "Asolo è soprannominata 'la città dei cento orizzonti' per la sua posizione panoramica.",
+        battuta: "L'Asolo Prosecco: bollicine con vista su una delle città più belle del Veneto! 🏘️",
+        emoji: "🏘️"
+    },
+    {
+        nome: "Lison", tipo: "Bianco", regione: "Veneto/Friuli", gradazione: "11-12%",
+        temperatura: "10-12°C", bicchiere: "Tulipano",
+        descrizione: "Bianco secco da Tocai Friulano nelle pianure tra Veneto e Friuli. Sapido e minerale.",
+        abbinamento: "Pesce, risotto, antipasti, formaggi freschi",
+        cibi: ["pesce", "risotto", "antipasto", "mozzarella"],
+        curiosita: "Il vitigno si chiama oggi Friulano dopo la disputa con l'Ungheria per il nome Tocai.",
+        battuta: "Il Lison: il vino che attraversa i confini regionali come fosse niente! 🌉",
+        emoji: "🌊"
+    },
+
+    // ===== FRIULI VENEZIA GIULIA =====
+    {
+        nome: "Ramandolo", tipo: "Bianco Dolce", regione: "Friuli Venezia Giulia", gradazione: "12-13%",
+        temperatura: "10-12°C", bicchiere: "Tulipano",
+        descrizione: "Rarissimo bianco dolce friulano da Verduzzo Giallo appassito nelle Prealpi Carniche.",
+        abbinamento: "Dolci secchi, formaggi erborinati, foie gras",
+        cibi: ["formaggi erborinati", "dolci secchi", "foie gras"],
+        curiosita: "È prodotto solo nel piccolo borgo di Ramandolo, nel comune di Nimis.",
+        battuta: "Il Ramandolo: così raro che se lo trovi, compralo subito! 🏆",
+        emoji: "💎"
+    },
+    {
+        nome: "Colli Orientali del Friuli Picolit", tipo: "Bianco Dolce", regione: "Friuli Venezia Giulia", gradazione: "13-15%",
+        temperatura: "10-12°C", bicchiere: "Calice",
+        descrizione: "Il grande vino dolce friulano: dorato, aromatico, prodotto in quantità minime dal Picolit.",
+        abbinamento: "Formaggi erborinati, foie gras, dessert raffinati, meditazione",
+        cibi: ["foie gras", "gorgonzola", "dolci raffinati"],
+        curiosita: "Il Picolit produce pochi acini per grappolo — ogni vite dà pochissimo vino preziosissimo.",
+        battuta: "Il Picolit è così raro da bere che merita di essere meditato, non solo bevuto! 🧘",
+        emoji: "👑"
+    },
+
+    // ===== EMILIA ROMAGNA =====
+    {
+        nome: "Albana di Romagna", tipo: "Bianco", regione: "Emilia-Romagna", gradazione: "12-14%",
+        temperatura: "10-12°C", bicchiere: "Tulipano",
+        descrizione: "Prima DOCG bianca d'Italia (1987). Secco, amabile o passito, sempre con carattere.",
+        abbinamento: "Piadina, prosciutto di Parma, pesce all'adriatico, dolci secchi (passito)",
+        cibi: ["piadina", "prosciutto", "pesce", "strozzapreti"],
+        curiosita: "Fu la prima DOCG per un vino bianco italiano, scelta che all'epoca fece discutere.",
+        battuta: "L'Albana fu la prima DOCG bianca d'Italia — pioniera anche lei! 🥇",
+        emoji: "🌾"
+    },
+
+    // ===== TOSCANA =====
+    {
+        nome: "Brunello di Montalcino", tipo: "Rosso", regione: "Toscana", gradazione: "13-15%",
+        temperatura: "18-20°C", bicchiere: "Borgogna grande",
+        descrizione: "Uno dei più grandi vini rossi italiani: Sangiovese Grosso a Montalcino, longevo e potente.",
+        abbinamento: "Selvaggina, cinghiale, brasati, tartufo nero, formaggi stagionati",
+        cibi: ["selvaggina", "cinghiale", "capriolo", "brasato", "tartufo", "pecorino stagionato"],
+        curiosita: "Deve invecchiare almeno 5 anni (6 per la Riserva). Biondi-Santi è la cantina fondatrice.",
+        battuta: "Il Brunello non ha fretta: come i grandi capolavori, ha bisogno di tempo! ⏳",
+        emoji: "⏳"
+    },
+    {
+        nome: "Chianti", tipo: "Rosso", regione: "Toscana", gradazione: "11.5-13%",
+        temperatura: "16-18°C", bicchiere: "Bordeaux",
+        descrizione: "Il vino toscano per eccellenza: Sangiovese dominante in un'area vastissima tra Firenze e Siena.",
+        abbinamento: "Bistecca fiorentina, pasta al ragù, pizza, salumi toscani",
+        cibi: ["pasta", "pizza", "bistecca", "pollo", "maiale", "ragù", "lasagne", "carne"],
+        curiosita: "Il simbolo del Chianti Classico è il Gallo Nero, il consorzio più antico del vino italiano.",
+        battuta: "Il Chianti? È come me: accessibile a tutti ma con una profondità sorprendente! 😉",
+        emoji: "🐓"
+    },
+    {
+        nome: "Chianti Classico", tipo: "Rosso", regione: "Toscana", gradazione: "12-13.5%",
+        temperatura: "17-18°C", bicchiere: "Bordeaux",
+        descrizione: "Il cuore storico del Chianti: zona tra Firenze e Siena, Sangiovese puro e austero.",
+        abbinamento: "Bistecca fiorentina, pappardelle al cinghiale, pecorino, ribollita",
+        cibi: ["bistecca", "pappardelle", "cinghiale", "pecorino", "ribollita"],
+        curiosita: "Il Gran Selezione è il top della gamma, invecchiato almeno 30 mesi solo da vigne singole.",
+        battuta: "Il Chianti Classico ha il Gallo Nero sul collo — e lo porta con orgoglio! 🐓",
+        emoji: "🐓"
+    },
+    {
+        nome: "Vino Nobile di Montepulciano", tipo: "Rosso", regione: "Toscana", gradazione: "12.5-13.5%",
+        temperatura: "17-18°C", bicchiere: "Bordeaux",
+        descrizione: "Il vino 'nobile' della splendida Montepulciano: elegante, speziato, con buon invecchiamento.",
+        abbinamento: "Pici all'aglione, carni alla brace, cinghiale, pecorino di Pienza",
+        cibi: ["pici", "cinghiale", "bistecca", "pecorino", "carne"],
+        curiosita: "Coltivato da almeno il '500 sulle colline di Montepulciano. Prima DOCG italiana nel 1980.",
+        battuta: "Il Vino Nobile: quando anche il nome è una promessa di grandezza! 👑",
+        emoji: "🏰"
+    },
+    {
+        nome: "Morellino di Scansano", tipo: "Rosso", regione: "Toscana", gradazione: "12-13%",
+        temperatura: "16-18°C", bicchiere: "Bordeaux",
+        descrizione: "Sangiovese della Maremma: più caldo, morbido e fruttato rispetto ai Chianti settentrionali.",
+        abbinamento: "Cinghiale, pecora, acquacotta, pecorino maremmano",
+        cibi: ["cinghiale", "pecora", "pappardelle", "pecorino"],
+        curiosita: "'Morellino' è il nome locale del Sangiovese in Maremma. Zona costiera e soleggiata.",
+        battuta: "Il Morellino: il Sangiovese che prende il sole in Maremma e si rilassa! ☀️",
+        emoji: "☀️"
+    },
+    {
+        nome: "Vernaccia di San Gimignano", tipo: "Bianco", regione: "Toscana", gradazione: "11-12%",
+        temperatura: "10-12°C", bicchiere: "Tulipano",
+        descrizione: "Storico bianco toscano da vitigno autoctono: secco, amarognolo, piacevolmente sapido.",
+        abbinamento: "Pesce, crostini, zuppe di verdura, formaggi freschi",
+        cibi: ["pesce", "crostini", "zuppa", "mozzarella", "verdure"],
+        curiosita: "Prima DOC italiana (1966) e prima DOCG bianca toscana. La Vernaccia è descritta da Dante.",
+        battuta: "La Vernaccia di San Gimignano ha le torri medievali come testimonial! 🏰",
+        emoji: "🏛️"
+    },
+    {
+        nome: "Bolgheri Sassicaia", tipo: "Rosso", regione: "Toscana", gradazione: "13-14%",
+        temperatura: "17-18°C", bicchiere: "Bordeaux",
+        descrizione: "L'unica DOC italiana dedicata a un singolo vino. Cabernet Sauvignon e Franc nella Maremma.",
+        abbinamento: "Costata di manzo, agnello, selvaggina, formaggi stagionati",
+        cibi: ["bistecca", "agnello", "selvaggina", "formaggio stagionato"],
+        curiosita: "Il Sassicaia è stato il primo 'Supertuscan': vinificato fuori dai disciplinari tradizionali negli anni '70.",
+        battuta: "Il Sassicaia: il vino che ha convinto il Cabernet a trasferirsi in Toscana! 🌟",
+        emoji: "💫"
+    },
+    {
+        nome: "Elba Aleatico Passito", tipo: "Rosso Dolce", regione: "Toscana", gradazione: "12-15%",
+        temperatura: "14-16°C", bicchiere: "Calice",
+        descrizione: "Vino dolce dell'Isola d'Elba da uve Aleatico appassite. Napoleone lo amava.",
+        abbinamento: "Cioccolato fondente, dolci alle amarene, cantucci, formaggi erborinati",
+        cibi: ["cioccolato", "cantucci", "dolci", "gorgonzola"],
+        curiosita: "Napoleone Bonaparte durante l'esilio all'Elba ne era ghiotto. Lo beveva ogni giorno.",
+        battuta: "Il vino preferito di Napoleone all'Elba: anche i grandi imperatori sanno gustare! 🏆",
+        emoji: "⚜️"
+    },
+    {
+        nome: "Montecucco Sangiovese", tipo: "Rosso", regione: "Toscana", gradazione: "12.5-13.5%",
+        temperatura: "16-18°C", bicchiere: "Bordeaux",
+        descrizione: "Sangiovese ai piedi del Monte Amiata: giovane DOCG con grande potenziale.",
+        abbinamento: "Carni alla griglia, cinghiale, pasta con ragù",
+        cibi: ["grigliata", "cinghiale", "pasta", "salsiccia"],
+        curiosita: "Ottenuta la DOCG nel 2011, è una delle denominazioni più giovani della Toscana.",
+        battuta: "Il Montecucco: il giovane promettente della Toscana meridionale! 🌱",
+        emoji: "🌄"
+    },
+    {
+        nome: "Monteregio di Massa Marittima", tipo: "Rosso", regione: "Toscana", gradazione: "12%",
+        temperatura: "16°C", bicchiere: "Bordeaux",
+        descrizione: "Vino della Maremma settentrionale, zona collinare tra mare e miniere storiche.",
+        abbinamento: "Carni, formaggi maremmani, cinghiale",
+        cibi: ["carne", "cinghiale", "formaggio"],
+        curiosita: "Massa Marittima era famosa per le miniere d'argento nel Medioevo.",
+        battuta: "Il Monteregio viene dalla terra dei minatori — è un vino che non ha paura del buio! ⛏️",
+        emoji: "⛏️"
+    },
+    {
+        nome: "Val di Cornia Suvereto", tipo: "Rosso", regione: "Toscana", gradazione: "13%",
+        temperatura: "17°C", bicchiere: "Bordeaux",
+        descrizione: "Rosso della costa toscana con Sangiovese e Cabernet, zona di eccellenza emergente.",
+        abbinamento: "Carni rosse, cinghiale, formaggi stagionati",
+        cibi: ["bistecca", "cinghiale", "formaggio stagionato"],
+        curiosita: "Suvereto è considerata uno dei borghi più belli d'Italia.",
+        battuta: "Il Suvereto: un grande vino in uno dei borghi più belli d'Italia! 🏡",
+        emoji: "🏡"
+    },
+
+    // ===== UMBRIA =====
+    {
+        nome: "Sagrantino di Montefalco", tipo: "Rosso", regione: "Umbria", gradazione: "13-14%",
+        temperatura: "17-18°C", bicchiere: "Borgogna",
+        descrizione: "Il vino con più tannini al mondo: potente, austero, con lunghissimo invecchiamento.",
+        abbinamento: "Piccione, agnello, carni rosse al forno, tartufo nero di Norcia",
+        cibi: ["piccione", "agnello", "agnello al forno", "tartufo nero", "cinghiale"],
+        curiosita: "Il Sagrantino ha la più alta concentrazione di tannini tra tutti i vitigni conosciuti al mondo.",
+        battuta: "Il Sagrantino è il vino più tannico al mondo — non è per cuori teneri! 💪",
+        emoji: "🏛️"
+    },
+    {
+        nome: "Torgiano Rosso Riserva", tipo: "Rosso", regione: "Umbria", gradazione: "12.5-13%",
+        temperatura: "17°C", bicchiere: "Bordeaux",
+        descrizione: "Sangiovese umbro dalla famiglia Lungarotti, pionieri del vino di qualità in Umbria.",
+        abbinamento: "Piccione arrosto, tartufo, agnello, pasta al ragù",
+        cibi: ["piccione", "tartufo", "agnello", "pasta"],
+        curiosita: "La famiglia Lungarotti ha letteralmente inventato l'enologia moderna umbra dagli anni '60.",
+        battuta: "Il Torgiano Rosso Riserva: quando una famiglia trasforma una regione intera! 🏅",
+        emoji: "🏅"
+    },
+
+    // ===== MARCHE =====
+    {
+        nome: "Vernaccia di Serrapetrona", tipo: "Rosso Spumante", regione: "Marche", gradazione: "11.5-12%",
+        temperatura: "12-14°C", bicchiere: "Flute",
+        descrizione: "Unico spumante rosso DOCG italiano da vitigno autoctono. Dolce o secco, sempre curioso.",
+        abbinamento: "Dolci marchigiani, formaggi freschi, torte di carnevale",
+        cibi: ["dolci", "ciambella", "formaggi freschi"],
+        curiosita: "È il solo spumante rosso DOCG d'Italia, prodotto in un'area ristrettissima delle Marche.",
+        battuta: "La Vernaccia di Serrapetrona: l'unico spumante rosso DOCG — un unicum assoluto! 🦄",
+        emoji: "🦄"
+    },
+    {
+        nome: "Offida", tipo: "Bianco", regione: "Marche", gradazione: "12-13%",
+        temperatura: "10-12°C", bicchiere: "Tulipano",
+        descrizione: "Pecorino e Passerina marchigiani in versione DOCG: bianchi sapidi e floreali.",
+        abbinamento: "Pesce dell'Adriatico, antipasti, brodetto, vincisgrassi",
+        cibi: ["pesce", "brodetto", "antipasto", "mozzarella"],
+        curiosita: "Il Pecorino marchigiano (vitigno, non formaggio!) era quasi estinto. Oggi è rinato.",
+        battuta: "L'Offida: il Pecorino che non è il formaggio ma è ugualmente delizioso! 🐑",
+        emoji: "🌊"
+    },
+    {
+        nome: "Conero", tipo: "Rosso", regione: "Marche", gradazione: "12.5-13.5%",
+        temperatura: "16-18°C", bicchiere: "Bordeaux",
+        descrizione: "Montepulciano d'Abruzzo sul promontorio del Monte Conero. Carattere e sapidità marina.",
+        abbinamento: "Brodetto di pesce, porchetta, carni alla brace, vincisgrassi",
+        cibi: ["brodetto", "porchetta", "grigliata", "pasta"],
+        curiosita: "Il Monte Conero è il solo promontorio adriatico d'Italia: vigneti a picco sul mare.",
+        battuta: "Il Conero cresce a picco sull'Adriatico — un vino con la schiena dritta! 🌊",
+        emoji: "🏔️"
+    },
+
+    // ===== ABRUZZO =====
+    {
+        nome: "Montepulciano d'Abruzzo Colline Teramane", tipo: "Rosso", regione: "Abruzzo", gradazione: "12.5-13%",
+        temperatura: "16-18°C", bicchiere: "Bordeaux",
+        descrizione: "Il Montepulciano d'Abruzzo nella sua versione più nobile: colline teramane vicino al Gran Sasso.",
+        abbinamento: "Arrosticini, agnello alla brace, pasta al ragù, formaggi pecorino",
+        cibi: ["arrosticini", "agnello", "pasta al ragù", "pecorino"],
+        curiosita: "Prima DOCG abruzzese. Le colline teramane danno vini più eleganti rispetto alla costa.",
+        battuta: "Il Montepulciano d'Abruzzo Colline Teramane: l'Abruzzo in tutta la sua potenza! 🏔️",
+        emoji: "🏔️"
+    },
+
+    // ===== CAMPANIA =====
+    {
+        nome: "Fiano di Avellino", tipo: "Bianco", regione: "Campania", gradazione: "12-13%",
+        temperatura: "10-12°C", bicchiere: "Tulipano",
+        descrizione: "Grande bianco campano da vitigno antichissimo: minerale, elegante, si evolve magnificamente.",
+        abbinamento: "Pesce, crostacei, mozzarella di bufala, pasta con le vongole",
+        cibi: ["pesce", "vongole", "mozzarella di bufala", "crostacei", "gamberi"],
+        curiosita: "Il Fiano era già coltivato dai Romani, che lo chiamavano 'vitis apiana' per i fichi che attira.",
+        battuta: "Il Fiano di Avellino: un bianco del Sud che sfida i migliori del Nord! 🏆",
+        emoji: "🏺"
+    },
+    {
+        nome: "Greco di Tufo", tipo: "Bianco", regione: "Campania", gradazione: "12-13%",
+        temperatura: "10-12°C", bicchiere: "Tulipano",
+        descrizione: "Elegante e strutturato da suoli vulcanici irpini: uno dei grandi bianchi del Sud Italia.",
+        abbinamento: "Pesce, crostacei, astice, mozzarella di bufala, frittura di paranza",
+        cibi: ["pesce", "crostacei", "astice", "mozzarella", "bufala", "frittura"],
+        curiosita: "Cresce su terreni ricchi di tufo (roccia vulcanica) vicino al Vesuvio. Introdotto dai Greci.",
+        battuta: "Il Greco di Tufo non è semplice, è un bianco con la testa di un grande rosso! 🏛️",
+        emoji: "🏛️"
+    },
+    {
+        nome: "Taurasi", tipo: "Rosso", regione: "Campania", gradazione: "12.5-13.5%",
+        temperatura: "17-18°C", bicchiere: "Borgogna",
+        descrizione: "Il Barolo del Sud: Aglianico in Irpinia, potente, tannico, con magnifico invecchiamento.",
+        abbinamento: "Agnello al forno, ragù napoletano, formaggi stagionati, selvaggina",
+        cibi: ["agnello", "ragù", "pasta al ragù", "selvaggina", "pecorino"],
+        curiosita: "Invecchiamento minimo 3 anni (4 per la Riserva). Mastroberardino l'ha reso famoso nel mondo.",
+        battuta: "Il Taurasi è il Barolo del Sud — stessa potenza, sole diverso! ☀️",
+        emoji: "🌋"
+    },
+
+    // ===== BASILICATA =====
+    {
+        nome: "Aglianico del Vulture Superiore", tipo: "Rosso", regione: "Basilicata", gradazione: "13-14%",
+        temperatura: "16-18°C", bicchiere: "Bordeaux",
+        descrizione: "Strutturato e minerale dai suoli vulcanici del Monte Vulture. Barolo del Sud bis.",
+        abbinamento: "Agnello, salsiccia lucana, formaggi stagionati, carni rosse",
+        cibi: ["agnello", "capretto", "salsiccia sarda", "pecorino", "salumi", "maiale"],
+        curiosita: "Il Vulture è un vulcano estinto: i suoli ricchi di minerali danno complessità unica al vino.",
+        battuta: "L'Aglianico del Vulture è tosto fuori ma sorprendente dentro! 🌋",
+        emoji: "🌋"
+    },
+
+    // ===== CALABRIA =====
+    {
+        nome: "Greco di Bianco", tipo: "Bianco Dolce", regione: "Calabria", gradazione: "17%",
+        temperatura: "10-12°C", bicchiere: "Calice",
+        descrizione: "Raro e prezioso vino passito calabrese dalla punta dello stivale. Dorato e aromatico.",
+        abbinamento: "Dolci calabresi, formaggi erborinati, meditazione",
+        cibi: ["dolci", "fichi", "mandorle", "formaggi erborinati"],
+        curiosita: "Prodotto in soli due comuni (Bianco e Casignana) con pochissime bottiglie l'anno.",
+        battuta: "Il Greco di Bianco: il tesoro nascosto della punta dello stivale! 💎",
+        emoji: "💎"
+    },
+    {
+        nome: "Terre di Cosenza Magliocco", tipo: "Rosso", regione: "Calabria", gradazione: "12.5%",
+        temperatura: "16°C", bicchiere: "Bordeaux",
+        descrizione: "Rosso calabrese da vitigno autoctono Magliocco: fruttato, speziato, caldo.",
+        abbinamento: "Carne di capra, soppressata, formaggi calabresi",
+        cibi: ["capra", "soppressata", "nduja", "formaggi"],
+        curiosita: "Il Magliocco è il vitigno autoctono calabrese più diffuso, quasi scomparso negli anni '80.",
+        battuta: "Il Magliocco: il vitigno calabrese che è tornato dall'oblio! 🌅",
+        emoji: "🌅"
+    },
+
+    // ===== SICILIA =====
+    {
+        nome: "Cerasuolo di Vittoria", tipo: "Rosso", regione: "Sicilia", gradazione: "13%",
+        temperatura: "16-18°C", bicchiere: "Bordeaux",
+        descrizione: "L'unica DOCG siciliana: Nero d'Avola e Frappato per un rosso elegante e fruttato.",
+        abbinamento: "Coniglio alla stimpirata, caponata, formaggi siciliani, pasta alla norma",
+        cibi: ["coniglio", "caponata", "pasta alla norma", "arancini", "tuma"],
+        curiosita: "L'unica DOCG di tutta la Sicilia. Il Frappato dà freschezza, il Nero d'Avola struttura.",
+        battuta: "Il Cerasuolo di Vittoria è l'unica DOCG siciliana — porta il peso dell'isola intera! 🌋",
+        emoji: "🌋"
+    },
+
+    // ===== SARDEGNA =====
+    {
+        nome: "Vermentino di Gallura", tipo: "Bianco", regione: "Sardegna", gradazione: "12-14%",
+        temperatura: "8-10°C", bicchiere: "Tulipano",
+        descrizione: "L'unica DOCG bianca della Sardegna: fresco, sapido, con note di mandorla e fiori bianchi.",
+        abbinamento: "Aragosta, pesce fresco, bottarga, antipasti sardi",
+        cibi: ["pesce", "aragosta", "bottarga", "insalata", "gamberi", "calamari", "polpo"],
+        curiosita: "Il Vermentino di Gallura è l'unica DOCG bianca della Sardegna. La Gallura è nel nord dell'isola.",
+        battuta: "Il Vermentino di Gallura: il bianco che profuma di Costa Smeralda! 🏖️",
+        emoji: "🌊"
+    },
+
+    // ===== PUGLIA =====
+    {
+        nome: "Primitivo di Manduria Dolce Naturale", tipo: "Rosso Dolce", regione: "Puglia", gradazione: "16-17%",
+        temperatura: "14-16°C", bicchiere: "Calice",
+        descrizione: "Il Primitivo nella sua versione dolce e concentrata: uve semi-appassite in vendemmia tardiva.",
+        abbinamento: "Cioccolato fondente, dolci pugliesi, formaggi erborinati, fichi secchi",
+        cibi: ["cioccolato", "fichi", "formaggi erborinati", "dolci"],
+        curiosita: "La versione dolce del Primitivo di Manduria è ottenuta da uve raccolte tardivamente.",
+        battuta: "Il Primitivo dolce: quando il vino pugliese decide di fare i complimenti ai dessert! 🍫",
+        emoji: "🍇"
+    },
+
+    // ===== EXTRA — vini DOC iconici che vale aggiungere =====
+    {
+        nome: "Prosecco", tipo: "Bianco Frizzante", regione: "Veneto/Friuli", gradazione: "11%",
+        temperatura: "6-8°C", bicchiere: "Flute",
+        descrizione: "Il vino frizzante più venduto al mondo: fresco, floreale, con perlage delicato.",
+        abbinamento: "Aperitivi, frutti di mare, prosciutto crudo, dolci",
+        cibi: ["aperitivo", "gamberi", "frutti di mare", "antipasto", "dolce", "torta", "speck", "prosciutto"],
+        curiosita: "La DOC Prosecco copre Veneto e Friuli. Il nome viene dal paese istriano di Prosecco.",
+        battuta: "Il Prosecco è il mio migliore amico — sempre allegro e festaiolo! 🎉",
+        emoji: "🥂"
+    },
+    {
+        nome: "Chianti Classico Gran Selezione", tipo: "Rosso", regione: "Toscana", gradazione: "13.5%",
+        temperatura: "18°C", bicchiere: "Borgogna",
+        descrizione: "Il vertice assoluto del Chianti Classico: da singola vigna, affinamento minimo 30 mesi.",
+        abbinamento: "Bistecca fiorentina, cinghiale, tartufo, formaggi stagionati",
+        cibi: ["bistecca", "cinghiale", "tartufo", "pecorino stagionato"],
+        curiosita: "Introdotta nel 2014, la Gran Selezione è la tipologia apice del Chianti Classico.",
+        battuta: "La Gran Selezione è il Chianti che ha passato più tempo in cantina che fuori! ⏳",
+        emoji: "🏆"
+    },
+    {
+        nome: "Nero d'Avola", tipo: "Rosso", regione: "Sicilia", gradazione: "13-14%",
+        temperatura: "16-18°C", bicchiere: "Bordeaux",
+        descrizione: "Caldo, avvolgente e pieno di sole siciliano. Il re dei vitigni rossi della Sicilia.",
+        abbinamento: "Pasta alla norma, arancini, pesce spada, melanzane, salsiccia",
+        cibi: ["melanzane", "pesce spada", "tonno", "pasta", "arancini", "salsiccia", "agnello"],
+        curiosita: "Prende il nome da Avola, cittadina in provincia di Siracusa. Ottimo anche in blend.",
+        battuta: "Il Nero d'Avola è il vino più caloroso che conosca — ti abbraccia come un amico! 🤗",
+        emoji: "☀️"
+    },
+    {
+        nome: "Cannonau di Sardegna", tipo: "Rosso", regione: "Sardegna", gradazione: "13-15%",
+        temperatura: "16-18°C", bicchiere: "Bordeaux",
+        descrizione: "Robusto e generoso, vino simbolo della longevità sarda. Lo stesso vitigno della Garnacha spagnola.",
+        abbinamento: "Porceddu, pecora bollita, salsiccia sarda, formaggi sardi",
+        cibi: ["pecora", "agnello", "porceddu", "pecorino", "salumi", "salsiccia sarda"],
+        curiosita: "Alcuni studi scientifici lo collegano alla straordinaria longevità degli abitanti della Barbagia.",
+        battuta: "Si dice che il Cannonau aiuti a vivere più a lungo... con moderazione! 🧓",
+        emoji: "🌿"
+    },
+    {
+        nome: "Lambrusco di Sorbara", tipo: "Rosso Frizzante", regione: "Emilia-Romagna", gradazione: "11%",
+        temperatura: "12-14°C", bicchiere: "Bordeaux",
+        descrizione: "Il più elegante dei Lambrusco: delicato, quasi rosato, con bollicine fine e persistente.",
+        abbinamento: "Tortellini in brodo, prosciutto di Modena, gnocco fritto",
+        cibi: ["tortellini", "prosciutto", "gnocco fritto", "tigelle", "salumi"],
+        curiosita: "Il Sorbara è considerato il cru dei Lambrusco, dall'omonima frazione vicino Modena.",
+        battuta: "Il Lambrusco di Sorbara è il Lambrusco per chi dice di non amare il Lambrusco! 😄",
+        emoji: "🎈"
+    },
+    {
+        nome: "Cerasuolo d'Abruzzo", tipo: "Rosato", regione: "Abruzzo", gradazione: "12-13%",
+        temperatura: "10-12°C", bicchiere: "Tulipano",
+        descrizione: "Vivace e dal colore ciliegia intenso — molto più di un semplice rosato.",
+        abbinamento: "Arrosticini, porchetta, brodetto di pesce, pizza",
+        cibi: ["arrosticini", "porchetta", "pesce", "antipasto", "pizza", "verdure grigliate"],
+        curiosita: "Il nome deriva dalla ciliegia (cerasa) in dialetto abruzzese. È il rosato più strutturato d'Italia.",
+        battuta: "Il Cerasuolo non è un rosato qualunque — ha la grinta di un vino rosso! 🍒",
+        emoji: "🍒"
+    },
+    {
+        nome: "Vermentino di Sardegna", tipo: "Bianco", regione: "Sardegna", gradazione: "12-13%",
+        temperatura: "8-10°C", bicchiere: "Tulipano",
+        descrizione: "Fresco come una brezza marina, il bianco sardo più amato fuori dall'isola.",
+        abbinamento: "Pesce, frutti di mare, insalate, antipasti di mare",
+        cibi: ["pesce", "branzino", "orata", "salmone", "insalata", "gamberi", "calamari", "polpo"],
+        curiosita: "Coltivato in tutta la Sardegna, è diverso dal Vermentino di Gallura (DOCG) per zona e carattere.",
+        battuta: "Il Vermentino di Sardegna è il mio compagno di vacanza preferito — sempre rinfrescante! 🏖️",
+        emoji: "🌊"
+    },
+    {
+        nome: "Pecorino", tipo: "Bianco", regione: "Marche/Abruzzo", gradazione: "13-14%",
+        temperatura: "10-12°C", bicchiere: "Tulipano",
+        descrizione: "Il vitigno redivivo delle Marche e Abruzzo: sapido, floreale, con corpo sorprendente.",
+        abbinamento: "Pesce dell'Adriatico, brodetto, spaghetti alle vongole, formaggi freschi",
+        cibi: ["pesce", "vongole", "brodetto", "antipasto", "mozzarella"],
+        curiosita: "Il Pecorino era quasi estinto negli anni '80. Odoardo Dottori ne ha salvato i vecchi ceppi.",
+        battuta: "Il Pecorino vitigno è tornato dall'oblio ed è subito diventato una star! ⭐",
+        emoji: "🐑"
+    },
+    {
+        nome: "Falanghina del Sannio", tipo: "Bianco", regione: "Campania", gradazione: "12-13%",
+        temperatura: "10-12°C", bicchiere: "Tulipano",
+        descrizione: "Bianco campano fresco e floreale. Il vitigno potrebbe essere il Falernum degli antichi romani.",
+        abbinamento: "Mozzarella di bufala, pesce, pizza fritta, frittura",
+        cibi: ["mozzarella di bufala", "pesce", "pizza", "frittura", "antipasto"],
+        curiosita: "La Falanghina era il vitigno del Falerno, il vino più famoso dell'antica Roma.",
+        battuta: "La Falanghina: il vino che bevevano i Romani e che ancora ci fa sentire imperatori! 🏛️",
+        emoji: "🏺"
+    },
+    {
         nome: "Primitivo di Manduria", tipo: "Rosso", regione: "Puglia", gradazione: "14-16%",
         temperatura: "16-18°C", bicchiere: "Bordeaux",
-        descrizione: "Corposo, caldo e ricco di frutto maturo",
-        abbinamento: "Carni alla griglia, formaggi piccanti, salumi",
+        descrizione: "Corposo, caldo e ricco di frutto maturo. Il Primitivo nella sua versione secca più famosa.",
+        abbinamento: "Carni alla griglia, agnello, formaggi piccanti, orecchiette al ragù",
         cibi: ["grigliata", "salsiccia", "agnello", "costine", "formaggio piccante", "salumi", "hamburger"],
-        curiosita: "È geneticamente lo stesso vitigno dello Zinfandel californiano",
+        curiosita: "È geneticamente identico allo Zinfandel californiano. Portato in California dagli emigrati pugliesi.",
         battuta: "Il Primitivo è il vino che non fa mai le cose a metà! 💪",
         emoji: "🔥"
     },
     {
         nome: "Aglianico del Vulture", tipo: "Rosso", regione: "Basilicata", gradazione: "13-14%",
         temperatura: "16-18°C", bicchiere: "Bordeaux",
-        descrizione: "Strutturato e minerale, cresciuto sui suoli vulcanici del Vulture",
-        abbinamento: "Carni rosse, salumi, formaggi stagionati",
+        descrizione: "Strutturato e minerale dai suoli vulcanici del Monte Vulture. Grande longevità.",
+        abbinamento: "Agnello al forno, salsiccia lucana, formaggi stagionati, pasta al ragù",
         cibi: ["agnello", "capretto", "salsiccia", "pecorino", "salumi", "maiale"],
-        curiosita: "Viene chiamato il 'Barolo del Sud' per la sua grande capacità di invecchiamento",
-        battuta: "L'Aglianico è tosto fuori ma sorprendente dentro, un po' come i migliori amici! 🌋",
+        curiosita: "Viene chiamato il 'Barolo del Sud' per la struttura e la capacità di invecchiamento.",
+        battuta: "L'Aglianico del Vulture: tosto fuori ma sorprendente dentro! 🌋",
         emoji: "🌋"
     },
     {
         nome: "Verdicchio dei Castelli di Jesi", tipo: "Bianco", regione: "Marche", gradazione: "12-13%",
         temperatura: "8-10°C", bicchiere: "Tulipano",
-        descrizione: "Sapido e minerale, con una piacevole nota di mandorla",
-        abbinamento: "Pesce, brodetto, frutti di mare, mozzarella",
+        descrizione: "Sapido e minerale con nota di mandorla. Il bianco marchigiano più famoso nel mondo.",
+        abbinamento: "Pesce dell'Adriatico, brodetto, vongole, mozzarella",
         cibi: ["pesce", "brodetto", "vongole", "cozze", "mozzarella", "frittura di pesce"],
-        curiosita: "Cresce in vigneti che si affacciano sull'Adriatico, da cui prende sapidità",
+        curiosita: "Cresce in vigneti affacciati sull'Adriatico da cui prende la sapidità caratteristica.",
         battuta: "Il Verdicchio è discreto ma quando lo assaggi non lo dimentichi più! 🐟",
         emoji: "🐟"
     },
     {
-        nome: "Lagrein", tipo: "Rosso", regione: "Alto Adige", gradazione: "13-14%",
-        temperatura: "16-18°C", bicchiere: "Bordeaux",
-        descrizione: "Profondo, fruttato e con un caratteristico tannino vellutato",
-        abbinamento: "Speck, canederli, carni di montagna, cervo",
-        cibi: ["speck", "canederli", "cervo", "cinghiale", "stinco", "wurstel", "crauti"],
-        curiosita: "È un vitigno autoctono coltivato quasi esclusivamente in Alto Adige",
-        battuta: "Il Lagrein arriva dalla montagna ma ha l'animo di un vino da grande occasione! ⛰️",
-        emoji: "⛰️"
-    },
-    {
-        nome: "Cannonau di Sardegna", tipo: "Rosso", regione: "Sardegna", gradazione: "13-15%",
-        temperatura: "16-18°C", bicchiere: "Bordeaux",
-        descrizione: "Robusto e generoso, vino simbolo della longevità sarda",
-        abbinamento: "Carne di pecora, salumi, formaggi sardi, porceddu",
-        cibi: ["pecora", "agnello", "porceddu", "pecorino", "salumi", "salsiccia sarda"],
-        curiosita: "Alcuni studi lo collegano alla straordinaria longevità degli abitanti della Barbagia",
-        battuta: "Si dice che il Cannonau aiuti a vivere più a lungo... ma con moderazione, mi raccomando! 🧓",
-        emoji: "🌿"
-    },
-    {
-        nome: "Greco di Tufo", tipo: "Bianco", regione: "Campania", gradazione: "12-13%",
-        temperatura: "10-12°C", bicchiere: "Tulipano",
-        descrizione: "Elegante e strutturato, uno dei grandi bianchi del Sud Italia",
-        abbinamento: "Pesce, crostacei, formaggi freschi, mozzarella di bufala",
-        cibi: ["pesce", "crostacei", "astice", "gamberi", "mozzarella", "bufala", "frittura"],
-        curiosita: "Cresce su terreni di origine vulcanica vicino al Vesuvio",
-        battuta: "Il Greco di Tufo non è semplice, è un bianco con la testa di un grande rosso! 🏛️",
-        emoji: "🏛️"
-    },
-    {
-        nome: "Cerasuolo d'Abruzzo", tipo: "Rosato", regione: "Abruzzo", gradazione: "12-13%",
-        temperatura: "10-12°C", bicchiere: "Tulipano",
-        descrizione: "Vivace e dal colore intenso, molto più di un semplice rosato",
-        abbinamento: "Antipasti, pesce saporito, arrosticini, porchetta",
-        cibi: ["arrosticini", "porchetta", "pesce", "antipasto", "pizza", "verdure grigliate"],
-        curiosita: "Il nome deriva dal colore che ricorda la ciliegia (cerasa, in dialetto abruzzese)",
-        battuta: "Il Cerasuolo non è un rosato qualunque, ha la grinta di un vino rosso! 🍒",
-        emoji: "🍒"
+        nome: "Franciacorta Satèn", tipo: "Spumante", regione: "Lombardia", gradazione: "12%",
+        temperatura: "6-8°C", bicchiere: "Flute",
+        descrizione: "La versione cremosa del Franciacorta: pressione più bassa, bollicine setose, solo bianchi.",
+        abbinamento: "Pesce crudo, crostacei, carpaccio, risotto allo zafferano",
+        cibi: ["pesce crudo", "crostacei", "carpaccio", "risotto"],
+        curiosita: "Il Satèn è prodotto solo in bianco bianco con pressione di 4,5 bar invece dei soliti 6.",
+        battuta: "Il Satèn è il Franciacorta in vestito di seta — eleganza al quadrato! 🥂",
+        emoji: "🪡"
     },
     {
         nome: "Soave", tipo: "Bianco", regione: "Veneto", gradazione: "11-12%",
         temperatura: "8-10°C", bicchiere: "Tulipano",
-        descrizione: "Delicato e floreale, con un finale leggermente ammandorlato",
-        abbinamento: "Antipasti, risotti, pesce di lago, formaggi freschi",
+        descrizione: "Delicato e floreale, con finale leggermente ammandorlato. Il bianco veronese per eccellenza.",
+        abbinamento: "Antipasti, risotto, pesce di lago, formaggi freschi",
         cibi: ["risotto", "pesce di lago", "trota", "carpaccio", "antipasto", "verdure"],
-        curiosita: "Prende il nome dall'omonima cittadina fortificata vicino Verona",
-        battuta: "Il Soave è discreto come il nome suggerisce, ma sa farsi notare nel bicchiere! 🏰",
+        curiosita: "Prende il nome dall'omonima cittadina medievale vicino Verona. Garganega è il vitigno base.",
+        battuta: "Il Soave è discreto come il nome suggerisce, ma sa farsi notare! 🏰",
         emoji: "🏰"
     },
     {
-        nome: "Lambrusco", tipo: "Rosso Frizzante", regione: "Emilia-Romagna", gradazione: "10-11%",
-        temperatura: "12-14°C", bicchiere: "Bordeaux",
-        descrizione: "Allegro e dissetante, perfetto compagno della cucina emiliana",
-        abbinamento: "Salumi, tortellini, parmigiano, gnocco fritto",
-        cibi: ["tortellini", "salumi", "mortadella", "parmigiano", "gnocco fritto", "pasta ripiena", "lasagne"],
-        curiosita: "Esistono decine di varietà di Lambrusco, dal secco al dolce",
-        battuta: "Il Lambrusco non si prende mai troppo sul serio, è il vino della convivialità! 🎈",
-        emoji: "🎈"
+        nome: "Lagrein", tipo: "Rosso", regione: "Alto Adige", gradazione: "13-14%",
+        temperatura: "16-18°C", bicchiere: "Bordeaux",
+        descrizione: "Profondo, fruttato e vellutato: vitigno autoctono altoatesino quasi unico al mondo.",
+        abbinamento: "Speck, canederli, cervo, stinco di maiale, wurstel",
+        cibi: ["speck", "canederli", "cervo", "cinghiale", "stinco", "wurstel", "crauti"],
+        curiosita: "Coltivato quasi esclusivamente in Alto Adige, è uno dei vitigni autoctoni più rari d'Italia.",
+        battuta: "Il Lagrein arriva dalla montagna ma ha l'animo di un grande vino! ⛰️",
+        emoji: "⛰️"
     }
 ];
 
